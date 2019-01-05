@@ -4,7 +4,10 @@
   "description": "Utility to convert integers between bases",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap --cov test.js",
+    "pretest": "standard",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,20 @@
   "bugs": {
     "url": "https://github.com/alxtford/numconv/issues"
   },
-  "homepage": "https://github.com/alxtford/numconv#readme"
+  "homepage": "https://github.com/alxtford/numconv#readme",
+  "bin": "cli.js",
+  "files": [
+    "cli.js",
+    "index.js"
+  ],
+  "dependencies": {
+    "sywac": "^1.2.1",
+    "sywac-style-basic": "^1.0.1"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "standard": "^12.0.1",
+    "standard-version": "^4.4.0",
+    "tap": "^12.1.1"
+  }
 }
