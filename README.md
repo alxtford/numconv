@@ -2,9 +2,7 @@
 
 > Utility to convert integers between bases
 
-Maybe some badges here.
-
-Replace this with your own content.
+[![Build Status](https://travis-ci.com/alxtford/numconv.svg?branch=master)](https://travis-ci.com/alxtford/numconv)
 
 ## Install
 
