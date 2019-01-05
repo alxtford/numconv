@@ -1,0 +1,25 @@
+{
+  "name": "numconv",
+  "version": "1.0.0",
+  "description": "Utility to convert integers between bases",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxtford/numconv.git"
+  },
+  "keywords": [
+    "hex",
+    "dec",
+    "binary",
+    "util"
+  ],
+  "author": "alxtford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alxtford/numconv/issues"
+  },
+  "homepage": "https://github.com/alxtford/numconv#readme"
+}
