@@ -20,5 +20,24 @@ module.exports = {
     } else {
       return '0x' + dec.toString(16).toUpperCase()
     }
+  },
+
+  hexToDec: function (hex) {
+    var dec
+    dec = parseInt(hex, 16)
+
+    if (!Number.isSafeInteger(dec)) {
+      if (dec < 0) {
+        dec = Number.MIN_SAFE_INTEGER
+      } else {
+        dec = Number.MAX_SAFE_INTEGER
+      }
+    }
+
+    if (hex[0] === '-') {
+      dec *= -1
+    }
+
+    return dec
   }
 }

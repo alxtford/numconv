@@ -2,9 +2,10 @@
 
 var tap = require('tap')
 
-var decToHexFile = require('./dec-to-hex.js')
-var decToHexFunc = decToHexFile.decToHex
+var decHexFile = require('./dec-hex.js')
+var decToHexFunc = decHexFile.decToHex
 
+tap.equal(decToHexFunc(0), '0x0')
 tap.equal(decToHexFunc(1), '0x1')
 tap.equal(decToHexFunc(-1), '-0x1')
 tap.equal(decToHexFunc(255), '0xFF')
