@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
+// Figlet and Sywac added for CLI
 const figlet = require('figlet')
-
 const cli = require('sywac')
   .style(require('sywac-style-basic'))
   .preface(figlet.textSync('numconv'))
