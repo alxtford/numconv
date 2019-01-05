@@ -22,20 +22,18 @@ module.exports = {
     }
   },
 
+  // Takes a hex as a string. Returns a decimal as an int.
   hexToDec: function (hex) {
     var dec
     dec = parseInt(hex, 16)
 
+    // If the dec is not a safe int, return the closest safe integer
     if (!Number.isSafeInteger(dec)) {
       if (dec < 0) {
-        dec = Number.MIN_SAFE_INTEGER
+        return Number.MIN_SAFE_INTEGER
       } else {
-        dec = Number.MAX_SAFE_INTEGER
+        return Number.MAX_SAFE_INTEGER
       }
-    }
-
-    if (hex[0] === '-') {
-      dec *= -1
     }
 
     return dec
