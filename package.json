@@ -6,7 +6,8 @@
   "scripts": {
     "test": "tap --cov test.js",
     "pretest": "standard",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --reporter=text-lcov",
+    "posttest": "tap --coverage-report=text-lcov | codacy-coverage -p --accountToken CODACY_ACCOUNT_TOKEN --username alxtford --projectName numconv",
     "release": "standard-version"
   },
   "repository": {
@@ -29,15 +30,15 @@
   "files": [
     "cli.js",
     "index.js",
-    "dec-to-hex.js"
+    "dec-hex.js"
   ],
   "dependencies": {
+    "codacy-coverage": "^3.4.0",
     "figlet": "^1.2.1",
     "sywac": "^1.2.1",
     "sywac-style-basic": "^1.0.1"
   },
   "devDependencies": {
-    "coveralls": "^3.0.2",
     "eslint": "^5.12.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
