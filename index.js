@@ -12,24 +12,23 @@ var invalidInputWarn = 'Invalid input type. The valid input types are: \'dec\', 
 
 if (require.main === module) {
   cli.parseAndExit().then(argv => {
-    switch (argv.out_type) {
+    switch (argv.out_base) {
       case 'hex':
         console.log('Hex to be outputted!')
 
-        switch (argv.in_type) {
+        switch (argv.in_base) {
           case 'dec':
             console.log('Dec inputted!')
             console.log('Converted num = ' + decToHex(argv.in))
             break
-          default: {
+          default:
             console.log(invalidInputWarn)
-          }
         }
         break
       case 'dec':
         console.log('Dec to be outputted!')
 
-        switch (argv.in_type) {
+        switch (argv.in_base) {
           case 'hex':
             console.log('Hex inputted!')
             console.log('Converted num = ' + hexToDec(argv.in))
@@ -38,9 +37,8 @@ if (require.main === module) {
             console.log(invalidInputWarn)
         }
         break
-      default: {
+      default:
         console.log(invalidOutputWarn)
-      }
     }
   })
 }
