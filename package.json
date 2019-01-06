@@ -1,6 +1,6 @@
 {
   "name": "numconv",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Utility to convert integers between bases",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "url": "https://github.com/alxtford/numconv/issues"
   },
   "homepage": "https://github.com/alxtford/numconv#readme",
-  "bin": "cli.js",
+  "bin": "index.js",
   "files": [
     "cli.js",
     "index.js",

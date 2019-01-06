@@ -9,8 +9,6 @@ const cli = require('sywac')
   .help('-h, --help')
   .version('-v, --version')
   .positional('<in>', { paramsDesc: 'Input integer', mustExist: true })
-  .positional('<in type>', { paramsDesc: 'Type of input integer.', choices: ['hex', 'dec'], mustExist: true })
-  .positional('<out type>', { paramsDesc: 'Type of output integer.', choices: ['hex', 'dec'], mustExist: true })
+  .positional('<in_type>', { paramsDesc: 'Type of input integer.', choices: ['hex', 'dec'], mustExist: true })
+  .positional('<out_type>', { paramsDesc: 'Type of output integer.', choices: ['hex', 'dec'], mustExist: true })
 module.exports = cli
-
-if (require.main === module) cli.parseAndExit()
