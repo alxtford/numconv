@@ -8,7 +8,7 @@
     "pretest": "standard",
     "coverage": "nyc report --reporter=text-lcov",
     "posttest": "tap --coverage-report=text-lcov",
-    "posttest-codacy": "tap --coverage-report=text-lcov | codacy-coverage --accountToken CODACY_ACCOUNT_TOKEN --username alxtford --projectName numconv",
+    "posttest-codacy": "tap --coverage-report=text-lcov | codacy-coverage --accountToken %CODACY_ACCOUNT_TOKEN% --username alxtford --projectName numconv",
     "release": "standard-version"
   },
   "repository": {
