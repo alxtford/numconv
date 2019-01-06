@@ -7,7 +7,7 @@ var tap = require('tap')
  * TESTS FOR DEC - HEX CONVERSIONS
  *
  */
-var decHexFile = require('./dec-hex.js')
+var decHexFile = require('./baseCalc.js')
 var decToHexFunc = decHexFile.decToHex
 var hexToDecFunc = decHexFile.hexToDec
 
