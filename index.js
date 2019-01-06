@@ -3,28 +3,43 @@
 // cli imported from cli.js
 var cli = require('./cli.js')
 
-// var decHex = require('./baseCalc.js')
+var baseCalc = require('./baseCalc.js')
 
 var inVar, inBase, outBase
 
 if (require.main === module) {
   cli.parseAndExit().then(argv => {
-    console.log(argv)
+    inBase = baseCalc.baseErrCatch(argv.in_base, true)
+    outBase = baseCalc.baseErrCatch(argv.out_base, false)
+    if (!inBase || !outBase) {
+      console.log('Invalid base detected. Please ensure you are using bases 2 to 32!')
+      return
+    }
 
-    inBase = argv.in_base
-    outBase = argv.out_base
-    inVar = argv.in
+    var result = baseCalc.inVarErrCatch(argv.in, inBase)
 
-    if (inBase == null) {
-      console.log('Default in_base!')
-      inBase = 10
+    if (result.err_code) {
+      inVar = result.var
+    } else {
+      console.log('<in> must be a valid round integer, of the given [in_base]! The default [in_base] is decimal.')
+      return
     }
-    if (outBase == null) {
-      console.log('Default out_base!')
-      outBase = 16
-    }
-    if (!Number.isInteger(inVar) && inBase !== 16) {
-      console.log('<in> must be a round integer!')
-    }
+
+    var output = inVar.toString(outBase)
+    console.log('Output: ' + output.toUpperCase())
+
+    // if (!Number.isInteger(inVar) && inBase !== 16) {
+    //   console.log('<in> must be a round integer!')
+    // }
   })
 }
+
+// if (dec < 0) {
+//   // Change negative num to positive. The symbol is appended via the string!
+//   dec = -dec
+//   return '-0x' + dec.toString(16).toUpperCase()
+// } else {
+//   return '0x' + dec.toString(16).toUpperCase()
+// }
+
+// TODO Add a module.export for the logic
