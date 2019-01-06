@@ -7,7 +7,7 @@
     "test": "tap --cov test.js",
     "pretest": "standard",
     "coverage": "nyc report --reporter=text-lcov",
-    "posttest": "tap --coverage-report=text-lcov | codacy-coverage -p --accountToken CODACY_ACCOUNT_TOKEN --username alxtford --projectName numconv",
+    "posttest": "tap --coverage-report=text-lcov | codacy-coverage --token CODACY_PROJECT_TOKEN",
     "release": "standard-version"
   },
   "repository": {
