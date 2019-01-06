@@ -9,5 +9,4 @@ before_install:
   - sudo apt-get install jq
 
 after_success:
-  - npm run coverage
   - npm run posttest-codacy
