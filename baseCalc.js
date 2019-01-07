@@ -32,7 +32,15 @@ module.exports = {
 
   /* Function for making sure the inVar is as expected! Returns a base-10 */
   inVarErrCatch: function (inVar, inBase) {
-    var dec, err
+    var dec, err, base
+
+    if (inBase > 1 && inBase < 33) {
+      base = inBase
+    } else {
+      return ERROR
+    }
+
+    inVar = inVar.toString()
 
     if (inVar.includes('0x') || inVar.includes('0X')) {
       dec = inVar.substring(2)
@@ -40,8 +48,8 @@ module.exports = {
       dec = inVar
     }
 
-    if (inBase !== IN_BASE_DEFAULT) {
-      dec = parseInt(dec, inBase)
+    if (base !== IN_BASE_DEFAULT) {
+      dec = parseInt(dec, base)
     } else {
       dec = Number.parseInt(dec)
     }
