@@ -34,6 +34,8 @@ module.exports = {
   inVarErrCatch: function (inVar, inBase) {
     var dec, err, base
 
+    // TODO: Refactor to consistantly return object
+
     if (inBase > 1 && inBase < 33) {
       base = inBase
     } else {
