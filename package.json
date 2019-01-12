@@ -30,7 +30,7 @@
   "files": [
     "cli.js",
     "index.js",
-    "dec-hex.js"
+    "errCatch.js"
   ],
   "dependencies": {
     "codacy-coverage": "^3.4.0",

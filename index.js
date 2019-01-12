@@ -3,20 +3,20 @@
 // cli imported from cli.js
 var cli = require('./cli.js')
 
-var baseCalc = require('./baseCalc.js')
+var errCatch = require('./errCatch.js')
 
 var inVar, inBase, outBase
 
 if (require.main === module) {
   cli.parseAndExit().then(argv => {
-    inBase = baseCalc.baseErrCatch(argv.in_base, true)
-    outBase = baseCalc.baseErrCatch(argv.out_base, false)
+    inBase = errCatch.baseErrCatch(argv.in_base, true)
+    outBase = errCatch.baseErrCatch(argv.out_base, false)
     if (!inBase || !outBase) {
       console.log('Invalid base detected. Please ensure you are using bases 2 to 32!')
       return
     }
 
-    var result = baseCalc.inVarErrCatch(argv.in, inBase)
+    var result = errCatch.inVarErrCatch(argv.in, inBase)
 
     if (result.err_code) {
       inVar = result.var
