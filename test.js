@@ -27,7 +27,10 @@ tap.equal(baseCalc.baseErrCatch('hello', true), ERROR)
 tap.equal(baseCalc.baseErrCatch('hello', false), ERROR)
 
 // Test for inVar err Handling
-tap.equal(baseCalc.inVarErrCatch(0, 0), ERROR)
+tap.match(baseCalc.inVarErrCatch(0, 1), { 'err_code': ERROR, 'var': 0 })
+tap.match(baseCalc.inVarErrCatch(0, 33), { 'err_code': ERROR, 'var': 0 })
+
+tap.match(baseCalc.inVarErrCatch(0, 33), { 'err_code': ERROR, 'var': 0 })
 
 /*
  *
