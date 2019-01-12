@@ -36,7 +36,11 @@ module.exports = {
     var err = ERROR
     var base = 0
 
-    // TODO: Refactor to consistantly return object
+    var inVarStr = String(inVar)
+
+    if (inVarStr.includes('0x') || inVarStr.includes('0X')) {
+      inVar = inVarStr.substring(2)
+    }
 
     if (inBase > 1 && inBase < 33) {
       base = inBase
@@ -47,23 +51,18 @@ module.exports = {
       }
     }
 
-    inVar = inVar.toString()
+    dec = inVar
 
-    if (inVar.includes('0x') || inVar.includes('0X')) {
-      dec = inVar.substring(2)
-    } else {
-      dec = inVar
-    }
-
-    if (base !== IN_BASE_DEFAULT) {
+    if (base !== IN_BASE_DEFAULT && base !== OUT_BASE_DEFAULT) {
       dec = parseInt(dec, base)
     } else {
-      dec = Number.parseInt(dec)
+      dec = parseInt(dec)
     }
 
     if (Number.isSafeInteger(dec)) {
       err = SUCCESS
     } else {
+      dec = 0
       err = ERROR
     }
 
