@@ -32,14 +32,19 @@ module.exports = {
 
   /* Function for making sure the inVar is as expected! Returns a base-10 */
   inVarErrCatch: function (inVar, inBase) {
-    var dec, err, base
+    var dec = 0
+    var err = ERROR
+    var base = 0
 
     // TODO: Refactor to consistantly return object
 
     if (inBase > 1 && inBase < 33) {
       base = inBase
     } else {
-      return ERROR
+      return {
+        var: dec,
+        err_code: err
+      }
     }
 
     inVar = inVar.toString()
