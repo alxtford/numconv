@@ -5,17 +5,17 @@ var cli = require('./cli.js')
 
 var errCatch = require('./errCatch.js')
 
-var inVar, inBase, outBase
+function numConv (inVar, inBase, outBase) {
+  var inBaseInternal, outBaseInternal
 
-function numConv(inVar, in_base, out_base) {
-  inBase = errCatch.baseErrCatch(in_base, true)
-  outBase = errCatch.baseErrCatch(out_base, false)
-  if (!inBase || !outBase) {
+  inBaseInternal = errCatch.baseErrCatch(inBase, true)
+  outBaseInternal = errCatch.baseErrCatch(outBase, false)
+  if (!inBaseInternal || !outBaseInternal) {
     console.log('Invalid base detected. Please ensure you are using bases 2 to 32!')
     return
   }
 
-  var result = errCatch.inVarErrCatch(inVar, inBase)
+  var result = errCatch.inVarErrCatch(inVar, inBaseInternal)
 
   if (result.err_code) {
     inVar = result.var
@@ -24,15 +24,13 @@ function numConv(inVar, in_base, out_base) {
     return
   }
 
-  var output = inVar.toString(outBase)
+  var output = inVar.toString(outBaseInternal)
   console.log('Output: ' + output.toUpperCase())
 }
 
 if (require.main === module) {
   cli.parseAndExit().then(argv => {
-
-  numConv(argv.in, argv.in_base, argv.out_base)
-
+    numConv(argv.in, argv.in_base, argv.out_base)
   })
 }
 
