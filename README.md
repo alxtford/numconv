@@ -43,10 +43,13 @@ var obj = numConv('0xFF', 16, 10)
 * `inputVar` must be a string if it contains any characters. Can be an integer if only values 0-9 are used
 * `inputBase` and `outputBase` must be bases 2-32
 
-### Output
+## Output
 Format of the return output is as follows:
+
 `var: ` Is the converted value. Will be === `0` if an error is encountered.
+
 `err_code: ` Can be used for validity checking. Will return 1 on success.
+
 `log: ` Will be `''` by default, or on success. A string describing the error will be returned if `err_code` === 0 (error)
 
 ## License
