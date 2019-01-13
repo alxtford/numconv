@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const ERROR = 0
 const SUCCESS = 1
 
 // cli imported from cli.js
