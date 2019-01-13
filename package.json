@@ -1,6 +1,6 @@
 {
   "name": "numconv",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "Utility to convert integers between bases",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "pretest": "standard",
     "coverage": "nyc report --reporter=text-lcov",
     "posttest": "tap --coverage-report=text-lcov | codacy-coverage --username alxtford --projectName numconv && npm run-script build",
-    "release": "standard-version"
+    "release": "standard-version && git push --follow-tags origin master && npm publish"
   },
   "repository": {
     "type": "git",
