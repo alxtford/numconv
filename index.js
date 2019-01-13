@@ -3,10 +3,10 @@
 const SUCCESS = 1
 
 // cli imported from cli.js
-var cli = require('./cli.js')
+var cli = require('./src/cli.js')
 
 // baseConvert houses the logic of it all
-var baseConvert = require('./baseConvert.js')
+var baseConvert = require('./src/baseConvert.js')
 
 // This is maintain some amount of privacy, and to allow testing/export
 function numConv (inVar, inBase, outBase) {

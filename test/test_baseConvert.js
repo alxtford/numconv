@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var tap = require('tap')
-var baseConvert = require('../baseConvert.js')
+var baseConvert = require('../src/baseConvert.js')
 
 // const IN_BASE_DEFAULT = 10
 // const OUT_BASE_DEFAULT = 16

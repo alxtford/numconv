@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var tap = require('tap')
-var errCatch = require('../errCatch.js')
+var errCatch = require('../src/errCatch.js')
 
 const IN_BASE_DEFAULT = 10
 const OUT_BASE_DEFAULT = 16
