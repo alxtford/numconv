@@ -37,9 +37,12 @@ module.exports = {
     var base = 0
 
     var inVarStr = String(inVar)
-
-    if (inVarStr.includes('0x') || inVarStr.includes('0X')) {
-      inVar = inVarStr.substring(2)
+    if (inBase !== 16) {
+      if (inVarStr.includes('0x') || inVarStr.includes('0X')) {
+        inVarStr = inVarStr.substring(2)
+      }
+    } else if (!inVarStr.includes('0x') && !inVarStr.includes('0X')) {
+      inVarStr = '0x' + inVarStr
     }
 
     if (inBase > 1 && inBase < 33) {
@@ -51,12 +54,10 @@ module.exports = {
       }
     }
 
-    dec = inVar
-
     if (base !== IN_BASE_DEFAULT && base !== OUT_BASE_DEFAULT) {
-      dec = parseInt(dec, base)
+      dec = parseInt(inVarStr, base)
     } else {
-      dec = parseInt(dec)
+      dec = parseInt(inVarStr)
     }
 
     if (Number.isSafeInteger(dec)) {
