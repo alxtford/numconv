@@ -8,7 +8,7 @@
     "test": "tap --cov ./test/*",
     "pretest": "standard",
     "coverage": "nyc report --reporter=text-lcov",
-    "posttest": "tap --coverage-report=text-lcov | codacy-coverage --username alxtford --projectName numconv && npm run-script build",
+    "posttest": "tap --coverage-report=text-lcov | codacy-coverage --username alxtford --projectName numconv",
     "release": "standard-version && git push --follow-tags origin master && npm publish"
   },
   "repository": {
