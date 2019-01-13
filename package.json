@@ -4,7 +4,7 @@
   "description": "Utility to convert integers between bases",
   "main": "index.js",
   "scripts": {
-    "test": "tap --cov test_errCatch.js test_baseConvert.js",
+    "test": "tap --cov ./test/*",
     "pretest": "standard",
     "coverage": "nyc report --reporter=text-lcov",
     "posttest": "tap --coverage-report=text-lcov | codacy-coverage --username alxtford --projectName numconv",
