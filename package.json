@@ -1,6 +1,6 @@
 {
   "name": "numconv",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Utility to convert integers between bases",
   "main": "index.js",
   "scripts": {
