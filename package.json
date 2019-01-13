@@ -4,10 +4,11 @@
   "description": "Utility to convert integers between bases",
   "main": "index.js",
   "scripts": {
+    "build": "pkg . --out-path .\\bin\\",
     "test": "tap --cov ./test/*",
     "pretest": "standard",
     "coverage": "nyc report --reporter=text-lcov",
-    "posttest": "tap --coverage-report=text-lcov | codacy-coverage --username alxtford --projectName numconv",
+    "posttest": "tap --coverage-report=text-lcov | codacy-coverage --username alxtford --projectName numconv && npm run-script build",
     "release": "standard-version"
   },
   "repository": {
@@ -44,6 +45,7 @@
     "eslint-plugin-node": "8.0.1",
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-standard": "4.0.0",
+    "pkg": "^4.3.7",
     "standard": "12.0.1",
     "standard-version": "4.4.0",
     "tap": "12.1.1"
