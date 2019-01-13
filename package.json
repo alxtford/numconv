@@ -19,7 +19,9 @@
     "hex",
     "dec",
     "binary",
-    "util"
+    "util",
+    "cli",
+    "math"
   ],
   "author": "alxtford",
   "license": "ISC",
