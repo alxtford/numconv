@@ -30,9 +30,9 @@ $ numconv --help
 var numConv = require('numConv')
 
 // numConv(inputVar, inputBase, outputBase)
-var return = numConv('0xFF', 16, 10)
+var obj = numConv('0xFF', 16, 10)
 
-/* return = {
+/* obj = {
  *  var: 255,
  *  err_code: 1,
  *  log: ''
