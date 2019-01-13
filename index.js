@@ -43,7 +43,6 @@ function numConv (inVar, inBase, outBase) {
 
 if (require.main === module) {
   cli.parseAndExit().then(argv => {
-
     var convObj = numConv(argv.in, argv.in_base, argv.out_base)
     console.log('Output: ' + convObj.var.toUpperCase())
   })
