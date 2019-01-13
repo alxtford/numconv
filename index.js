@@ -8,6 +8,8 @@ var cli = require('./src/cli.js')
 // baseConvert houses the logic of it all
 var baseConvert = require('./src/baseConvert.js')
 
+module.exports = numConv
+
 // This is maintain some amount of privacy, and to allow testing/export
 function numConv (inVar, inBase, outBase) {
   return baseConvert.baseConvert(inVar, inBase, outBase)
@@ -26,5 +28,3 @@ if (require.main === module) {
     }
   })
 }
-
-module.exports = numConv
