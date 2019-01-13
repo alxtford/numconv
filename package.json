@@ -28,10 +28,8 @@
   "homepage": "https://github.com/alxtford/numconv#readme",
   "bin": "index.js",
   "files": [
-    "cli.js",
-    "index.js",
-    "errCatch.js",
-    "baseConvert.js"
+    "src/",
+    "index.js"
   ],
   "dependencies": {
     "codacy-coverage": "^3.4.0",
