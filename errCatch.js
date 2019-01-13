@@ -15,12 +15,14 @@ module.exports = {
    */
   baseErrCatch: function (base, isInputBase) {
     if (base == null) {
+      // Chooses defaults based on if this in the in or out base
       if (isInputBase) {
         return IN_BASE_DEFAULT
       } else {
         return OUT_BASE_DEFAULT
       }
     } else {
+      // If there is a base, round it, and make sure it is range
       base = Math.round(base)
       if (base > 1 && base < 33) {
         return base
@@ -36,6 +38,9 @@ module.exports = {
     var err = ERROR
     var base = 0
 
+    /* Turn inVar to a string, and look for '0x'
+     * If the base is not hex, remove the '0x', otherwise, if it is hex, add it
+     */
     var inVarStr = String(inVar)
     if (inBase !== 16) {
       if (inVarStr.includes('0x') || inVarStr.includes('0X')) {
@@ -45,6 +50,7 @@ module.exports = {
       inVarStr = '0x' + inVarStr
     }
 
+    // Ensure the base is within range
     if (inBase > 1 && inBase < 33) {
       base = inBase
     } else {
@@ -54,12 +60,14 @@ module.exports = {
       }
     }
 
+    // Check if the base is one of the defaults. parseInt() does the rest if not!
     if (base !== IN_BASE_DEFAULT && base !== OUT_BASE_DEFAULT) {
       dec = parseInt(inVarStr, base)
     } else {
       dec = parseInt(inVarStr)
     }
 
+    // Finally, do a safe int check
     if (Number.isSafeInteger(dec)) {
       err = SUCCESS
     } else {
@@ -67,6 +75,7 @@ module.exports = {
       err = ERROR
     }
 
+    // Return the final object
     return {
       var: dec,
       err_code: err
