@@ -1,0 +1,42 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - standard > eslint > inquirer > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - eslint > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - codacy-coverage > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - eslint > inquirer > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - eslint > table > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - standard > eslint > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - standard > eslint-plugin-import > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - standard-version > conventional-changelog > conventional-changelog-core > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - codacy-coverage > request-promise > request-promise-core > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - eslint-plugin-import > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - standard > eslint > table > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - standard-version > conventional-recommended-bump > conventional-commits-parser > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - standard-version > conventional-changelog > conventional-changelog-core > conventional-commits-parser > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - tap > nyc > istanbul-lib-instrument > @babel/types > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - standard-version > conventional-changelog > conventional-changelog-core > conventional-changelog-writer > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - tap > nyc > istanbul-lib-instrument > @babel/traverse > @babel/generator > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - tap > nyc > istanbul-lib-instrument > @babel/traverse > @babel/helper-function-name > @babel/types > lodash:
+        patched: '2019-07-05T02:21:09.803Z'
+    - tap > nyc > istanbul-lib-instrument > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2019-07-05T02:21:09.803Z'

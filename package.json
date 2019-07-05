@@ -9,7 +9,9 @@
     "pretest": "standard",
     "coverage": "nyc report --reporter=text-lcov",
     "posttest": "tap --coverage-report=text-lcov | codacy-coverage --username alxtford --projectName numconv",
-    "release": "standard-version && git push --follow-tags origin master && npm publish"
+    "release": "standard-version && git push --follow-tags origin master && npm publish",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,8 @@
   "dependencies": {
     "figlet": "^1.2.1",
     "sywac": "^1.2.1",
-    "sywac-style-basic": "^1.0.1"
+    "sywac-style-basic": "^1.0.1",
+    "snyk": "^1.192.0"
   },
   "devDependencies": {
     "codacy-coverage": "3.4.0",
@@ -51,5 +54,6 @@
     "standard": "12.0.1",
     "tap": "12.6.0",
     "standard-version": "5.0.1"
-  }
+  },
+  "snyk": true
 }
