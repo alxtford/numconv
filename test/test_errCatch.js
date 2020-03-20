@@ -33,22 +33,22 @@ tap.equal(errCatch.baseErrCatch('hello', true), ERROR)
 tap.equal(errCatch.baseErrCatch('hello', false), ERROR)
 
 // Test foerrCatcherr Handling
-tap.match(errCatch.inVarErrCatch(0, 1), { 'err_code': ERROR, 'var': 0 })
-tap.match(errCatch.inVarErrCatch(0, 33), { 'err_code': ERROR, 'var': 0 })
+tap.match(errCatch.inVarErrCatch(0, 1), { err_code: ERROR, var: 0 })
+tap.match(errCatch.inVarErrCatch(0, 33), { err_code: ERROR, var: 0 })
 
-tap.match(errCatch.inVarErrCatch(10, 10), { 'err_code': SUCCESS, 'var': 10 })
-tap.match(errCatch.inVarErrCatch('0x10', 16), { 'err_code': SUCCESS, 'var': 16 })
+tap.match(errCatch.inVarErrCatch(10, 10), { err_code: SUCCESS, var: 10 })
+tap.match(errCatch.inVarErrCatch('0x10', 16), { err_code: SUCCESS, var: 16 })
 
-tap.match(errCatch.inVarErrCatch(0x0, 16), { 'err_code': SUCCESS, 'var': 0 })
-tap.match(errCatch.inVarErrCatch(0X0, 16), { 'err_code': SUCCESS, 'var': 0 })
-tap.match(errCatch.inVarErrCatch('0xFF', 16), { 'err_code': SUCCESS, 'var': 255 })
-tap.match(errCatch.inVarErrCatch(10110, 2), { 'err_code': SUCCESS, 'var': 22 })
-tap.match(errCatch.inVarErrCatch(11, 15), { 'err_code': SUCCESS, 'var': 16 })
-tap.match(errCatch.inVarErrCatch(11, 16), { 'err_code': SUCCESS, 'var': 17 })
-tap.match(errCatch.inVarErrCatch('0x11', 15), { 'err_code': SUCCESS, 'var': 16 })
-tap.match(errCatch.inVarErrCatch('0X0', 17), { 'err_code': SUCCESS, 'var': 0 })
+tap.match(errCatch.inVarErrCatch(0x0, 16), { err_code: SUCCESS, var: 0 })
+tap.match(errCatch.inVarErrCatch(0X0, 16), { err_code: SUCCESS, var: 0 })
+tap.match(errCatch.inVarErrCatch('0xFF', 16), { err_code: SUCCESS, var: 255 })
+tap.match(errCatch.inVarErrCatch(10110, 2), { err_code: SUCCESS, var: 22 })
+tap.match(errCatch.inVarErrCatch(11, 15), { err_code: SUCCESS, var: 16 })
+tap.match(errCatch.inVarErrCatch(11, 16), { err_code: SUCCESS, var: 17 })
+tap.match(errCatch.inVarErrCatch('0x11', 15), { err_code: SUCCESS, var: 16 })
+tap.match(errCatch.inVarErrCatch('0X0', 17), { err_code: SUCCESS, var: 0 })
 
-tap.match(errCatch.inVarErrCatch(Number.MAX_SAFE_INTEGER + 1, 10), { 'err_code': ERROR })
+tap.match(errCatch.inVarErrCatch(Number.MAX_SAFE_INTEGER + 1, 10), { err_code: ERROR })
 
 /*
  *
