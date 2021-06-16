@@ -39,7 +39,7 @@
   "dependencies": {
     "figlet": "^1.2.1",
     "sywac": "^1.2.1",
-    "sywac-style-basic": "^1.0.1",
+    "sywac-style-basic": "^2.0.0",
     "snyk": "^1.316.1"
   },
   "devDependencies": {
