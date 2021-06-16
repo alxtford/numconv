@@ -53,7 +53,7 @@
     "pkg": "4.5.1",
     "standard": "14.3.4",
     "tap": "14.11.0",
-    "standard-version": "7.1.0"
+    "standard-version": "8.0.1"
   },
   "snyk": true
 }
