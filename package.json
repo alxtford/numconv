@@ -44,13 +44,13 @@
   },
   "devDependencies": {
     "codacy-coverage": "3.4.0",
-    "eslint": "6.8.0",
+    "eslint": "7.0.0",
     "eslint-config-standard": "17.0.0",
-    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-import": "2.25.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.1.0",
-    "pkg": "5.6.0",
+    "pkg": "5.8.1",
     "standard": "17.0.0",
     "tap": "15.0.9",
     "standard-version": "9.3.2"
